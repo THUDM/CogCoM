@@ -1,0 +1,73 @@
+{
+    "Manipulations":
+        {
+        "on_1_image": [
+            {"name": "grounding_i(tgt)->bbx_i", "description": "i-th grounding manipulation, that locates the object(s) specified by the target noun phrase `tgt` in current image, and return the resulting bounding box(es) as `bbx_i` where each box is represented by the top-left and bottom-right coordinates"},
+            {"name": "crop_and_zoomin_i(bbx)->img_i", "description": "i-th crop_and_zoomin manipulation which is useful to identify small and subtle objects in image, that first crops the current image using the box `bbx` defined by the top-left and bottom-right coordinates, and then zoom in the cropped image by two times and finally return the resulting image `img_i`"},
+            {"name": "OCR_i(tgt)->txt_i", "description": "i-th OCR manipulation, that recognize the natural texts written on the target `tgt`, and return the recognized texts `txt_i`"},
+            {"name": "calculate(tgt)->res_i", "description": "i-th calculate manipulation, that calculate the formula specified by the target `tgt` in current image, and return the calculation result `res_i`"}
+        ],
+        "prompt": "The allowed manipulations with their usage descriptions are: {MANIPULATIONS}."
+    },
+    "Demonstrations": [
+        {"image_path": "/share/img_datasets/mmbench_datasets/raw/TDIUC/MSCOCO2014_train2014/COCO_train2014_000000131087.jpg",
+        "question": "What sport is depicted in the picture ?",
+        "answer": "surfing",
+        "question_type": "sport_recognition",
+        "ans_source": "generation",
+        "steps": [{"manipulation": "None", "text": "Identify sports-related equipment, venues, or other signs in the image."}, {"manipulation": "None", "text": "Based on this information, identify which sport is depicted in the image."}]
+        },
+        {"image_path": "/share/img_datasets/mmbench_datasets/raw/TDIUC/MSCOCO2014_train2014/COCO_train2014_000000131093.jpg",
+        "question": "How many sheep are visible?",
+        "answer": "three",
+        "question_type": "counting",
+        "ans_source": "generation",
+        "steps": [{"manipulation": "grounding_1(sheeps)->bbx_1", "text": "Locate all sheeps in the image and return the corresponding boxes `bbx_1`."}, {"manipulation": "counting(`bbx_1`)->n_1", "text": "Based on the obtained boxes `bbx_1` calculate the number of sheeps, and return the result as `n_1`."}]
+        },
+        {"image_path": "/share/img_datasets/mmbench_datasets/raw/TDIUC/MSCOCO2014_train2014/COCO_train2014_000000262172.jpg",
+        "question": "Are there any chairs in the picture?",
+        "answer": "yes",
+        "question_type": "object_presence",
+        "ans_source": "generation",
+        "steps": [{"manipulation": "None", "text": "Search for the presence of chairs in the image."}]
+        },
+        {"image_path": "/share/img_datasets/mmbench_datasets/raw/TDIUC/MSCOCO2014_train2014/COCO_train2014_000000415067.jpg",
+        "question": "What color shirt is the person jumping in the air wearing?",
+        "answer": "yellow",
+        "question_type": "color",
+        "ans_source": "transfer",
+        "steps": [{"manipulation": "grounding_1(the person jumping)->bbx_1", "text": "Find the person jumping in the picture, and return the corresponding box as `bbx_1`."}, {"manipulation": "None", "text": "Find the shirt in the box `bbx_1`."}, {"manipulation": "None", "text": "Identify the color of the shirt."}]
+        },
+        {"image_path": "/share/img_datasets/MSCOCO/MSCOCO2014/train2014/COCO_train2014_000000000081.jpg",
+        "unique_id": "OKVQA-815",
+        "question": "What is the capital city of the country that uses this plane?",
+        "answer": "paris",
+        "steps": [{"manipulation": "grounding_1(the national emblem or logo)->bbx_1", "text": "Find the national emblem or text on the plane and return the corresponding boxes as `bbx_1`."}, {"manipulation": "None", "text": "Based on `bbx_1`, identify the country and its capital."}]
+        },
+        {"image_path": "/share/img_datasets/MSCOCO/MSCOCO2014/train2014/COCO_train2014_000000000443.jpg",
+        "unique_id": "OKVQA-4435",
+        "question": "What is the man holding the cats relationship status?",
+        "answer": "married",
+        "steps": [{"manipulation": "grounding_1(the man holding a cat)->bbx_1", "text": "Locate the man holding a cat in the image and return the corresponding box as `bbx_1`."}, {"manipulation": "None", "text": "Search for indications of the man's relationship status, such as a ring, within `bbx_1`."}, {"manipulation": "None", "text": "Identify the man's relationship status based on the found evidence."}]
+        },
+        {"image_path": "/share/img_datasets/MSCOCO/MSCOCO2014/train2014/COCO_train2014_000000001403.jpg",
+        "unique_id": "OKVQA-14035",
+        "question": "How old do you estimate this man to be?",
+        "answer": "forty",
+        "steps": [{"manipulation": "None", "text": "Look for texts or indications in the image that represent the man's age, such as an ID card or birthday cake."}, {"manipulation": "None", "text": "If an indication of the man's age is found, answer the man's age based on the indication. If not found, guess the man's age based on his physical appearance."}]
+        },
+        {
+        "image_path": "/share/img_datasets/mmbench_datasets/raw/ST-VQA/icdar/img_95.jpg",
+        "question": "What is written on the top left corner of the white board?",
+        "answer": "Book and Stationary Event of the Year!",
+        "steps": [{"manipulation": "grounding_1(white board)->bbx_1", "text": "Find the white board in current image and return the corresponding box of the white board as `bbx_1`."}, {"manipulation": "grounding_2(texts at the top left corner in box `bbx_1`)->bbx_2", "text": "Focus on the texts at the top left corner in box `bbx_1`, and return the focused region box as `bbx_2`."}, {"manipulation": "crop_and_zoomin_1(`bbx_2`)->img_1", "text": "Crop the current image by region `bbx_2` and zoom in the cropped image by two times, and return the new image as `img_1`."}, {"manipulation": "OCR(`img_1`)->txt_1", "text": "Read the texts in image `img_1`, and return the recognized texts as `txt_1`."}]
+        }
+    ],
+    "Prompts": {
+        "0shot": "You are a visual assistant capable of generating solving steps for image-oriented visual questions. In each step, you can optionally use a manipulation to operate the image, which can be used to acquire specific information from the image or to acquire the processed new image (please be aware that these manipulations will not actually be performed when you generate the solving steps). The manipulation can be one from the predefined ones, or can be a new one you create yourself (should there indeed be a need), where the predefined manipulations with their descriptions are listed below:\n\n{MANIPULATIONS}.\n\nGiven a question Q abount an image, please generate a series of essential solving steps, where the output of each step is a tuple consisting of a Manipulation (leave it to None if the current step doesn't involve any manipulation) and a Description: (1) Manipulation f(x)->y, that is the manipulation `f` targeting `x` to obtain specific information or image `y`; (2) Description, which is a sentence describing the current solving step.\n Please adhere the following format: given an input of 'Q: xxx. The essential solving steps are: ', the output should like 'Step 1: (Manipulation, Description); Step 2: (Manipulation, Description); ...'.\n\n Q: {QUESTION} The essential solving steps are: ",
+
+        "1shot": "You are a visual assistant capable of generating solving steps for image-oriented visual questions. In each step, you can optionally use a manipulation to operate the image, which can be used to acquire specific information from the image or to acquire the processed new image (please be aware that these manipulations will not actually be performed when you generate the solving steps). The manipulation can be one from the predefined ones, or can be a new one you create yourself (should there indeed be a need), where the predefined manipulations with their descriptions are listed below:\n\n{MANIPULATIONS}.\n\nGiven a question Q abount an image, please generate a series of essential solving steps, where the output of each step is a tuple consisting of a Manipulation (leave it to None if the current step doesn't involve any manipulation) and a Description: (1) Manipulation f(x)->y, that is the manipulation `f` targeting `x` to obtain specific information or image `y`; (2) Description, which is a sentence describing the current solving step.\n Please adhere the following format: given an input of 'Q: xxx. The essential solving steps are: ', the output should like 'Step 1: (Manipulation, Description); Step 2: (Manipulation, Description); ...'.\n\n There is an example: {DEMONSTRATIONS}\n\n Q: {QUESTION} The essential solving steps are: ",
+
+        "nshot": "You are a visual assistant capable of generating solving steps for image-oriented visual questions. In each step, you can optionally use a manipulation to operate the image, which can be used to acquire specific information from the image or to acquire the processed new image (please be aware that these manipulations will not actually be performed when you generate the solving steps). The manipulation can be one from the predefined ones, or can be a new one you create yourself (should there indeed be a need), where the predefined manipulations with their descriptions are listed below:\n\n{MANIPULATIONS}.\n\nGiven a question Q abount an image, please generate a series of essential solving steps, where the output of each step is a tuple consisting of a Manipulation (leave it to None if the current step doesn't involve any manipulation) and a Description: (1) Manipulation f(x)->y, that is the manipulation `f` targeting `x` to obtain specific information or image `y`; (2) Description, which is a sentence describing the current solving step.\n Please adhere the following format: given an input of 'Q: xxx. The essential solving steps are: ', the output should like 'Step 1: (Manipulation, Description); Step 2: (Manipulation, Description); ...'.\n\n There are several examples:\n {DEMONSTRATIONS}\n\n Q: {QUESTION} The essential solving steps are: "
+    }
+}

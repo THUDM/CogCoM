@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/qiji/repos/CogCoM/cogcom/data/convert_to_wds.py", line 103, in <module>
+    os.makedirs(save_dir, exist_ok=True)
+  File "/usr/lib/python3.10/os.py", line 210, in makedirs
+    head, tail = path.split(name)
+  File "/usr/lib/python3.10/posixpath.py", line 103, in split
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Traceback (most recent call last):
+  File "/home/qiji/repos/CogCoM/cogcom/data/convert_to_wds.py", line 103, in <module>
+    os.makedirs(save_dir, exist_ok=True)
+  File "/usr/lib/python3.10/os.py", line 210, in makedirs
+    head, tail = path.split(name)
+  File "/usr/lib/python3.10/posixpath.py", line 103, in split
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
