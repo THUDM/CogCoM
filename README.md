@@ -314,7 +314,7 @@ weights. Alternatively, you can choose to manually download the necessary weight
     <details>
     <summary>Click for view examples.</summary>
 
-    <img src=assets/cases.jpg width=50% />
+    <img src=cogcom/assets/cases.jpg width=50% />
 
     </details>
     <br>
@@ -324,7 +324,7 @@ weights. Alternatively, you can choose to manually download the necessary weight
 reasoning, Visual Grounding, Grounded Captioning, Image Captioning, Multi Choice, and Detailed Captioning.
 
 <div align="center">
-    <img src=assets/app_case.jpg width=50% />
+    <img src=cogcom/assets/app_case.jpg width=50% />
 </div>
 
 
