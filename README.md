@@ -3,7 +3,7 @@
 <!-- 📗 [中文版README](./README_zh.md) -->
 🆕: ```2024/2/4```: Release the base model CogCoM-base-17B.
 
-🌟 **Jump to detailed introduction: [Introduction to CogCoM](#introduction-to-cogcom)，
+🌟 Jump to detailed introduction: [Introduction to CogCoM](#introduction-to-cogcom)，
 
 
 <table>
@@ -190,7 +190,7 @@ weights. Alternatively, you can choose to manually download the necessary weight
 
 
 <div align="center">
-    <img src=assets/framework.jpg width=50% />
+    <img src=assets/framework.jpg width=70% />
 </div>
 
 
@@ -294,7 +294,7 @@ weights. Alternatively, you can choose to manually download the necessary weight
         <td>test</td>
     </tr>
     <tr>
-        <td>cogvim-grounding-generalist</td>
+        <td>CogCoM-grounding-generalist</td>
         <td>92.34</td>
         <td>94.57</td>
         <td>89.15</td>
@@ -313,8 +313,9 @@ weights. Alternatively, you can choose to manually download the necessary weight
 * CogCoM performs evidential visual reasoning for details recognition, reading time, understanding charts, counting objects, and reading texts.
     <details>
     <summary>Click for view examples.</summary>
-
-    <img src=cogcom/assets/cases.jpg width=50% />
+    <div align="center">
+    <img src=assets/cases.jpg width=70% />
+    </div>
 
     </details>
     <br>
@@ -324,7 +325,7 @@ weights. Alternatively, you can choose to manually download the necessary weight
 reasoning, Visual Grounding, Grounded Captioning, Image Captioning, Multi Choice, and Detailed Captioning.
 
 <div align="center">
-    <img src=cogcom/assets/app_case.jpg width=50% />
+    <img src=assets/app_case.jpg width=70% />
 </div>
 
 
@@ -341,7 +342,7 @@ reasoning, Visual Grounding, Grounded Captioning, Image Captioning, Multi Choice
 
     - We randomly add launching prompts to the CoM chains for solving meticulous visual problems, so you can explicitly let CogCoM to run with CoM mechanism, by adding the following launching prompt (we randomly generate numerous launching prompts for flexibility, see `com_dataset.py` for all details):
 
-    ```json
+    ```bash
         Please solve the problem gradually via a chain of manipulations, where in each step you can selectively adopt one of the following manipulations GROUNDING(a phrase)->boxes, OCR(an image or a region)->texts, CROP_AND_ZOOMIN(a region on given image)->new_image, CALCULATE(a computable target)->numbers, or invent a new manipulation, if that seems helpful. {QUESTION}
     ```
 
