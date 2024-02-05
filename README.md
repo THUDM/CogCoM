@@ -45,7 +45,7 @@
     - [Citation \& Acknowledgements](#citation--acknowledgements)
 
 ## Release
-- ```2024/2/4``` CogCoM-base-17b released。
+- ```2024/2/4``` CogCoM-base-17b released.
 
 ## Get Started
 
