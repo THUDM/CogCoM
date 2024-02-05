@@ -1,7 +1,7 @@
 # CogCoM
 
 <!-- 📗 [中文版README](./README_zh.md) -->
-🆕: ```2024/2/4```: Release the base model CogCoM-base-17B.
+🆕 ```2024/2/4```: Release the base model CogCoM-base-17b.
 
 🌟 Jump to detailed introduction: [Introduction to CogCoM](#introduction-to-cogcom)，
 
@@ -11,7 +11,7 @@
     <td>
       <h2> CogCoM </h2>
       <p> 📖  Paper: <a href="https://arxiv.org/">CogCoM: Train Large Vision-Language Models Diving into Details through Chain of Manipulations</a></p>
-      <p><b>CogCoM</b> is a general vision-language model (VLM) endowed with Chain of Manipulations (CoM) mechanism, that enables VLMs to perform multi-turns evidential visual reasoning by actively manipulating the input image. We now release CogCoM-base-17B, a model with 10 billion visual parameters and 7 billion language parameters, trained on a data fusion of 4 types capabilities (instruction-following, OCR, detailed-captioning, and CoM).</p>
+      <p><b>CogCoM</b> is a general vision-language model (VLM) endowed with Chain of Manipulations (CoM) mechanism, that enables VLMs to perform multi-turns evidential visual reasoning by actively manipulating the input image. We now release CogCoM-base-17b, a model with 10 billion visual parameters and 7 billion language parameters, trained on a data fusion of 4 types capabilities (instruction-following, OCR, detailed-captioning, and CoM).</p>
     </td>
   </tr>
   <tr>
@@ -45,13 +45,13 @@
     - [Citation \& Acknowledgements](#citation--acknowledgements)
 
 ## Release
-- ```2024/2/4``` CogCoM-base-17B released。
+- ```2024/2/4``` CogCoM-base-17b released。
 
 ## Get Started
 
 ### Option 1: Inference Using Web Demo.
 
-* Now you can use the local code we have implemented with Gradio for [GUI demo](/cogcom/demo/web_demo.py), and the web demo is coming soon.
+* Now you can use the local code we have implemented with Gradio for [GUI demo](/cogcom/demo/web_demo.py). The web demo is coming soon.
 
 
 ### Option 2：Deploy CogCoM by yourself
@@ -75,10 +75,10 @@ python -m spacy download en_core_web_sm
 Run CLI demo via:
 
 ```bash
-python cli_demo_sat.py --from_pretrained cogcom-base --bf16
+python cli_demo_sat.py --from_pretrained cogcom-base-17b --local_tokenizer path/to/tokenizer --bf16 --english
 ```
 
-The program will automatically download the sat model and interact in the command line. You can generate replies by
+The program will automatically download the sat model and interact in the command line (can simply using vicuna-7b-1.5 tokenizer). You can generate replies by
 entering instructions and pressing enter.
 Enter `clear` to clear the conversation history and `stop` to stop the program.
 
@@ -86,7 +86,7 @@ We also support model parallel inference, which splits model to multiple (2/4/8)
 following command controls the number of used GPUs.
 
 ```
-torchrun --standalone --nnodes=1 --nproc-per-node=2 cli_demo_sat.py --from_pretrained cogcom-base --bf16
+torchrun --standalone --nnodes=1 --nproc-per-node=2 cli_demo_sat.py --from_pretrained cogcom-base-17b --local_tokenizer path/to/tokenizer --bf16
 ```
 
 - If you want to manually download the weights, you can replace the path after ``--from_pretrained`` with the model
@@ -98,7 +98,7 @@ torchrun --standalone --nnodes=1 --nproc-per-node=2 cli_demo_sat.py --from_pretr
   For example
 
     ```bash
-    python cli_demo_sat.py --from_pretrained cogcom-base --fp16 --quant 8
+    python cli_demo_sat.py --from_pretrained cogcom-base-17b --fp16 --quant 8
     # In SAT version，--quant should be used with --fp16
     ```
 
@@ -107,13 +107,11 @@ torchrun --standalone --nnodes=1 --nproc-per-node=2 cli_demo_sat.py --from_pretr
     usage: cli_demo_sat.py [-h] [--max_length MAX_LENGTH] [--top_p TOP_P] [--top_k TOP_K] [--temperature TEMPERATURE]
 
     optional arguments:
-    -h, --help            show this help message and exit
-    --max_length MAX_LENGTH
-                            max length of the total sequence
-    --top_p TOP_P         top p for nucleus sampling
-    --top_k TOP_K         top k for top k sampling
-    --temperature TEMPERATURE
-                            temperature for sampling
+        -h, --help                    show this help message and exit
+        --max_length MAX_LENGTH       max length of the total sequence
+        --top_p TOP_P                 top p for nucleus sampling
+        --top_k TOP_K                 top k for top k sampling
+        --temperature TEMPERATURE     temperature for sampling
     ```
 
 #### Situation 2.2 CLI (Huggingface version)
@@ -122,7 +120,7 @@ Run CLI demo via:
 
 ```bash
 # CogCoM
-python cli_demo_hf.py --from_pretrained THUDM/cogcom-base-hf --bf16
+python cli_demo_hf.py --from_pretrained THUDM/cogcom-base-17b-hf --bf16 --local_tokenizer path/to/tokenizer --bf16 --english
 ```
 
 - If you want to manually download the weights, you can replace the path after ``--from_pretrained`` with the model
@@ -132,7 +130,7 @@ python cli_demo_hf.py --from_pretrained THUDM/cogcom-base-hf --bf16
   quantization**:
 
     ```bash
-    python cli_demo_hf.py --from_pretrained THUDM/cogcom-base-hf --quant 4
+    python cli_demo_hf.py --from_pretrained THUDM/cogcom-base-17b-hf --quant 4
     ```
 
 #### Situation 2.3 Web Demo
@@ -141,7 +139,7 @@ We also offer a local web demo based on Gradio. First, install Gradio by running
 and enter this repository and run `web_demo.py`. See the next section for detailed usage:
 
 ```bash
-python web_demo.py --from_pretrained cogcom-base --bf16
+python web_demo.py --from_pretrained cogcom-base-17b --bf16 --english
 ```
 
 The GUI of the web demo looks like:
@@ -338,7 +336,7 @@ reasoning, Visual Grounding, Grounded Captioning, Image Captioning, Multi Choice
 
 1. **General Multi-Round Dialogue**: Say whatever you want.
 
-2. **Chain of Manipulations** : run evidential visual reasoning explicitly.
+2. **Chain of Manipulations** : Explicitly launching CoM reasoning.
 
     - We randomly add launching prompts to the CoM chains for solving meticulous visual problems, so you can explicitly let CogCoM to run with CoM mechanism, by adding the following launching prompt (we randomly generate numerous launching prompts for flexibility, see `com_dataset.py` for all details):
 
@@ -347,26 +345,22 @@ reasoning, Visual Grounding, Grounded Captioning, Image Captioning, Multi Choice
     ```
 
 
-3. **Visual Grounding**. Three modes of grounding are supported:
+3. **Visual Grounding**. Our model is compatible with the grounding instructions from MultiInstruct and CogVLM, we provide basic usage of three functionalities here:
 
-    - Image description with grounding coordinates (bounding box). Use any template
+    - **Visual Grounding (VG)**: Returning grounding coordinates (bounding box) based on the description of objects. Use any template from [instruction template](cogcom/utils/template.py). For example (replacing <expr> with the object's description):
+
+      > "Find the region in image that <expr> describes."
+
+    - **Grounded Captioning (GC)**: Providing a description based on bounding box coordinates. Use a template from [instruction template](cogcom/utils/template.py). For example (replacing <objs> with the position coordinates),
+
+      > "Describe the content of *[[086,540,400,760]]* in the picture."
+
+    - **Image Description with Cooordinates (IDC)**: Image description with grounding coordinates (bounding box). Use any template
       from [caption_with_box template](https://github.com/THUDM/CogVLM/blob/main/utils/utils/template.py#L537) as model
       input. For example:
 
-   > Can you provide a description of the image and include the coordinates [[x0,y0,x1,y1]] for each mentioned object?
-
-    - Returning grounding coordinates (bounding box) based on the description of objects. Use any template
-      from [caption2box template](https://github.com/THUDM/CogVLM/blob/main/utils/utils/template.py#L345),
-      replacing ``<expr>`` with the object's description. For example:
-
-   > Can you point out *children in blue T-shirts* in the image and provide the bounding boxes of their location?
-
-    - Providing a description based on bounding box coordinates. Use a template
-      from [box2caption template](https://github.com/THUDM/CogVLM/blob/main/utils/utils/template.py#L400),
-      replacing ``<objs>`` with the position coordinates. For example:
-
-   > Tell me what you see within the designated area *[[086,540,400,760]]* in the picture.
-
+      > Can you provide a description of the image and include the coordinates [[x0,y0,x1,y1]] for each mentioned object?
+    
 **Format of coordination:** The bounding box coordinates in the model's input and output use the
 format ``[[x1, y1, x2, y2]]``, with the origin at the top left corner, the x-axis to the right, and the y-axis
 downward. (x1, y1) and (x2, y2) are the top-left and bottom-right corners, respectively, with values as relative

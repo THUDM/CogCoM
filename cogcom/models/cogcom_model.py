@@ -15,6 +15,11 @@ from .mixin import LlamaVisionExpertFCMixin, LlamaVisionExpertAttnMixin
 from sat import mpu
 import torch.nn.init as init
 
+from sat.resources.urls import MODEL_URLS
+MODEL_URLS["cogcom-base-17b"] = "r2://cogcom-base-17b.zip"
+
+
+
 def init_weights(module):
     if isinstance(module, (nn.Linear, nn.Embedding)):
         module.weight.data.normal_(mean=0.0, std=0.02)
