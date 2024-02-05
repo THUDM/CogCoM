@@ -35,7 +35,7 @@
         - [Option 3：Finetuning CogCoM](#option-3finetuning-cogacom)
         - [Hardware requirement](#hardware-requirement)
         - [Model checkpoints](#model-checkpoints)
-    - [Introduction to CogVLM](#introduction-to-cogvlm)
+    - [Introduction to CogCoM](#introduction-to-cogcom)
         - [Examples](#examples)
     - [Cookbook](#cookbook)
         - [Task Prompts](#task-prompts)
@@ -139,7 +139,7 @@ We also offer a local web demo based on Gradio. First, install Gradio by running
 and enter this repository and run `web_demo.py`. See the next section for detailed usage:
 
 ```bash
-python web_demo.py --from_pretrained cogcom-base-17b --bf16 --english
+python web_demo.py --from_pretrained cogcom-base-17b --local_tokenizer path/to/tokenizer --bf16 --english
 ```
 
 The GUI of the web demo looks like:
@@ -309,7 +309,7 @@ weights. Alternatively, you can choose to manually download the necessary weight
 
 
 * CogCoM performs evidential visual reasoning for details recognition, reading time, understanding charts, counting objects, and reading texts.
-    <details>
+    <details open>
     <summary>Click for view examples.</summary>
     <div align="center">
     <img src=assets/cases.jpg width=70% />
@@ -378,6 +378,6 @@ coordinates multiplied by 1000 (prefixed with zeros to three digits).
 
 ## License
 
-The code in this repository is open source under the [Apache-2.0 license](./LICENSE), while the use of the CogVLM model
+The code in this repository is open source under the [Apache-2.0 license](./LICENSE), while the use of the CogCoM model
 weights must comply with the [Model License](./MODEL_LICENSE).
 
