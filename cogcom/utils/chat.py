@@ -273,5 +273,6 @@ def chat(image_path, model, text_processor, img_processor, cross_img_processor,
 
     ret_response = ' '.join(ret_response)
     ret_response = ret_response[len(init_query):].strip()
-    return ret_response, ret_history, ret_imgs
+    # return ret_response, ret_history, ret_imgs
+    return ret_response, ret_history, ret_imgs[-1]
 
