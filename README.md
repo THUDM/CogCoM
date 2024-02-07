@@ -13,7 +13,7 @@
       <p> 📖  Paper: <a href="https://arxiv.org/">CogCoM: Train Large Vision-Language Models Diving into Details through Chain of Manipulations</a></p>
       <p><b>CogCoM</b> is a general vision-language model (VLM) endowed with Chain of Manipulations (CoM) mechanism, that enables VLMs to perform multi-turns evidential visual reasoning by actively manipulating the input image. We now release CogCoM-base-17b, a model with 10 billion visual parameters and 7 billion language parameters, trained on a data fusion of 4 types capabilities (instruction-following, OCR, detailed-captioning, and CoM).</p>
       <div align="center">
-        <img src=assets/case_1.jpg width=100% />
+        <img src=assets/cases_1.jpg width=100% />
       </div>
     </td>
   </tr>
