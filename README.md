@@ -187,7 +187,7 @@ weights. Alternatively, you can choose to manually download the necessary weight
   7 billion language parameters.
 - CogCoM-17B rely on an efficient CoM data production framework, that engages remarkable LLM to provide basic solving steps, adopts reliable visual tools to obtain visual contents, and then acquires feasible paths based on traversal.
 - CogCoM-17B is trained on a data fusion of 4 types capabilities, including instruction-following, OCR, detailed-captioning, and CoM, which can solve general multimodal tasks and can perform evidential visual reasoning that permits uses to trace the error causes in the interpretable paths.
-- CogCoM devises a memory-based compatible VLM architecture, that enables VLMs to actively manipulate the input image (e.g., grounding, crop, zoom in) and re-input the processed new iamge with a multi-turns multi-images manner, for rigorously reasoning.
+- CogCoM devises a memory-based compatible VLM architecture, that enables VLMs to actively manipulate the input image (e.g., grounding, crop, zoom in) and re-input the processed new image with a multi-turns multi-images manner, for rigorously reasoning.
 
 
 <div align="center">
