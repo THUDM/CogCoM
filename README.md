@@ -179,7 +179,9 @@ weights. Alternatively, you can choose to manually download the necessary weight
 
   |          Model name           | Input resolution |                           Introduction                            | Huggingface model | SAT model |
   | :-------------------------: | :----: | :-------------------------------------------------------: | :------: | :-------: |
-  |         cogcom-base-17b         |  490   |  Supports chat, grounding, OCR, and CoM.   |  [link](https://huggingface.co/THUDM)        |    [link](https://huggingface.co/THUDM)        |
+  |         cogcom-base-17b         |  490   |  Supports grounding, OCR, and CoM.   |  coming soon   |    [link](https://huggingface.co/qijimrc/CogCoM/blob/main/cogcom-base-17b.zip)        |
+  |         cogcom-grounding-17b         |  490   |  Supports grounding, OCR, and CoM.   |  coming soon   |    [link](https://huggingface.co/qijimrc/CogCoM/blob/main/cogcom-grounding-17b.zip)        |
+  |         cogcom-chat-17b         |  490   |  Supports chat, grounding, OCR, and CoM.   |  coming soon   |      coming soon      |
 
 ## Introduction to CogCoM
 
