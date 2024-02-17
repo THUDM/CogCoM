@@ -352,11 +352,11 @@ reasoning, Visual Grounding, Grounded Captioning, Image Captioning, Multi Choice
 
 3. **Visual Grounding**. Our model is compatible with the grounding instructions from MultiInstruct and CogVLM, we provide basic usage of three functionalities here:
 
-    - **Visual Grounding (VG)**: Returning grounding coordinates (bounding box) based on the description of objects. Use any template from [instruction template](cogcom/utils/template.py). For example (replacing <expr> with the object's description):
+    - **Visual Grounding (VG)**: Returning grounding coordinates (bounding box) based on the description of objects. Use any template from [instruction template](cogcom/utils/template.py). For example (replacing &lt;expr&gt; with the object's description):
 
-      > "Find the region in image that <expr> describes."
+      > "Find the region in image that "&lt;expr&gt;" describes."
 
-    - **Grounded Captioning (GC)**: Providing a description based on bounding box coordinates. Use a template from [instruction template](cogcom/utils/template.py). For example (replacing <objs> with the position coordinates),
+    - **Grounded Captioning (GC)**: Providing a description based on bounding box coordinates. Use a template from [instruction template](cogcom/utils/template.py). For example (replacing &lt;objs&gt; with the position coordinates),
 
       > "Describe the content of *[[086,540,400,760]]* in the picture."
 

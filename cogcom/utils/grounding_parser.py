@@ -76,7 +76,8 @@ def parse_resize(img, h, w):
 
 
 def vis_prop(img, boxes, new_width, new_height, file_name='output.png'):
-    new_img = img
+    # new_img = img
+    new_img = ImageDraw.Draw(img)
     fig, ax = plt.subplots()
     # Display the image
     ax.imshow(img)
@@ -87,8 +88,9 @@ def vis_prop(img, boxes, new_width, new_height, file_name='output.png'):
             rect = patches.Rectangle((box[0], box[1]), box[2]-box[0], box[3]-box[1], linewidth=1, edgecolor='r', facecolor='none')
             # Add the patch to the Axes
             ax.add_patch(rect)
-            new_img = ImageDraw.Draw(new_img)
+            # new_img = ImageDraw.Draw(new_img)
             new_img.rectangle(box, fill=None, outline='red')
+    new_img = new_img._image
     plt.gca().get_xaxis().set_major_formatter(FuncFormatter(lambda x, p: format(round(x/new_width, 3), ',')))
     plt.gca().get_yaxis().set_major_formatter(FuncFormatter(lambda x, p: format(round(x/new_height, 3), ',')))
     if file_name:
