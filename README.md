@@ -10,7 +10,7 @@
   <tr>
     <td>
       <h2> CogCoM </h2>
-      <p> 📖  Paper: <a href="https://arxiv.org/">CogCoM: Train Large Vision-Language Models Diving into Details through Chain of Manipulations</a></p>
+      <p> 📖  Paper: <a href="https://arxiv.org/pdf/2402.04236.pdf">CogCoM: Train Large Vision-Language Models Diving into Details through Chain of Manipulations</a></p>
       <p><b>CogCoM</b> is a general vision-language model (VLM) endowed with Chain of Manipulations (CoM) mechanism, that enables VLMs to perform multi-turns evidential visual reasoning by actively manipulating the input image. We now release CogCoM-base-17b, a model with 10 billion visual parameters and 7 billion language parameters, trained on a data fusion of 4 types capabilities (instruction-following, OCR, detailed-captioning, and CoM).</p>
       <div align="center">
         <img src=assets/cases_1.jpg width=100% />
@@ -386,3 +386,13 @@ coordinates multiplied by 1000 (prefixed with zeros to three digits).
 The code in this repository is open source under the [Apache-2.0 license](./LICENSE), while the use of the CogCoM model
 weights must comply with the [Model License](./MODEL_LICENSE).
 
+## Citation & Acknowledgements
+
+```
+@article{qi2024cogcom,
+  title={CogCoM: Train Large Vision-Language Models Diving into Details through Chain of Manipulations},
+  author={Qi, Ji and Ding, Ming and Wang, Weihan and Bai, Yushi and Lv, Qingsong and Hong, Wenyi and Xu, Bin and Hou, Lei and Li, Juanzi and Dong, Yuxiao and others},
+  journal={arXiv preprint arXiv:2402.04236},
+  year={2024}
+}
+```
