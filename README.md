@@ -391,7 +391,7 @@ weights must comply with the [Model License](./MODEL_LICENSE).
 ```
 @article{qi2024cogcom,
   title={CogCoM: Train Large Vision-Language Models Diving into Details through Chain of Manipulations},
-  author={Qi, Ji and Ding, Ming and Wang, Weihan and Bai, Yushi and Lv, Qingsong and Hong, Wenyi and Xu, Bin and Hou, Lei and Li, Juanzi and Dong, Yuxiao and others},
+  author={Qi, Ji and Ding, Ming and Wang, Weihan and Bai, Yushi and Lv, Qingsong and Hong, Wenyi and Xu, Bin and Hou, Lei and Li, Juanzi and Dong, Yuxiao and Tang, Jie},
   journal={arXiv preprint arXiv:2402.04236},
   year={2024}
 }
