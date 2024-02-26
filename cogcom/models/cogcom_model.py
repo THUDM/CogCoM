@@ -17,6 +17,8 @@ import torch.nn.init as init
 
 from sat.resources.urls import MODEL_URLS
 MODEL_URLS["cogcom-base-17b"] = "r2://cogcom-base-17b.zip"
+MODEL_URLS["cogcom-grounding-17b"] = "r2://cogcom-grounding-17b.zip"
+MODEL_URLS["cogcom-chat-17b"] = "r2://cogcom-chat-17b.zip"
 
 
 
