@@ -21,7 +21,6 @@ MODEL_URLS["cogcom-grounding-17b"] = "r2://cogcom-grounding-17b.zip"
 MODEL_URLS["cogcom-chat-17b"] = "r2://cogcom-chat-17b.zip"
 
 
-
 def init_weights(module):
     if isinstance(module, (nn.Linear, nn.Embedding)):
         module.weight.data.normal_(mean=0.0, std=0.02)
