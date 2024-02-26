@@ -1,6 +1,8 @@
 # CogCoM
 
 <!-- 📗 [中文版README](./README_zh.md) -->
+🆕 ```2024/2/26```: Release the base model CogCoM-chat-17b.
+🆕 ```2024/2/26```: Release the base model CogCoM-grounding-17b.
 🆕 ```2024/2/4```: Release the base model CogCoM-base-17b.
 
 🌟 Jump to detailed introduction: [Introduction to CogCoM](#introduction-to-cogcom).
@@ -9,9 +11,8 @@
 <table>
   <tr>
     <td>
-      <h2> CogCoM </h2>
       <p> 📖  Paper: <a href="https://arxiv.org/pdf/2402.04236.pdf">CogCoM: Train Large Vision-Language Models Diving into Details through Chain of Manipulations</a></p>
-      <p><b>CogCoM</b> is a general vision-language model (VLM) endowed with Chain of Manipulations (CoM) mechanism, that enables VLMs to perform multi-turns evidential visual reasoning by actively manipulating the input image. We now release CogCoM-base-17b, a model with 10 billion visual parameters and 7 billion language parameters, trained on a data fusion of 4 types capabilities (instruction-following, OCR, detailed-captioning, and CoM).</p>
+      <p><b>CogCoM</b> is a general vision-language model (VLM) endowed with Chain of Manipulations (CoM) mechanism, that enables VLMs to perform multi-turns evidential visual reasoning by actively manipulating the input image. We now release CogCoM-base-17b, CogCoM-grounding-17b and CogCoM-chat-17b, a family of models with 10 billion visual parameters and 7 billion language parameters, trained on respective generalist corpuses incorporating a fusion of 4 capability types of data (instruction-following, OCR, detailed-captioning, and CoM).</p>
       <div align="center">
         <img src=assets/cases_1.jpg width=100% />
       </div>
@@ -181,7 +182,7 @@ weights. Alternatively, you can choose to manually download the necessary weight
   | :-------------------------: | :----: | :-------------------------------------------------------: | :------: | :-------: |
   |         cogcom-base-17b         |  490   |  Supports grounding, OCR, and CoM.   |  coming soon   |    [link](https://huggingface.co/qijimrc/CogCoM/blob/main/cogcom-base-17b.zip)        |
   |         cogcom-grounding-17b         |  490   |  Supports grounding, OCR, and CoM.   |  coming soon   |    [link](https://huggingface.co/qijimrc/CogCoM/blob/main/cogcom-grounding-17b.zip)        |
-  |         cogcom-chat-17b         |  490   |  Supports chat, grounding, OCR, and CoM.   |  coming soon   |      coming soon      |
+  |         cogcom-chat-17b         |  490   |  Supports chat, grounding, OCR, and CoM.   |  coming soon   |      [link](https://huggingface.co/qijimrc/CogCoM/blob/main/cogcom-chat-17b.zip)      |
 
 ## Introduction to CogCoM
 
