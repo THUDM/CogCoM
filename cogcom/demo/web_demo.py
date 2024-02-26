@@ -34,8 +34,8 @@ NOTES = '<h3> This app is adapted from <a href="https://github.com/THUDM/CogCoM"
 MAINTENANCE_NOTICE1 = 'Hint 1: If the app report "Something went wrong, connection error out", please turn off your proxy and retry.<br>Hint 2: If you upload a large size of image like 10MB, it may take some time to upload and process. Please be patient and wait.'
 
 
-COM_NOTICE = 'Hint 1: To use <strong>Explicitly Launching CoM</strong>, please use the <a href="https://github.com/THUDM/CogVLM/blob/main/utils/com_dataset.py#L17">prompts for details</a>.'
-GROUNDING_NOTICE = 'Hint 1: To use <strong>Explicitly Launching CoM</strong>, please use the <a href="https://github.com/THUDM/CogCoM/blob/main/utils/com_dataset.py#L17">prompts for details</a>.'
+COM_NOTICE = 'Hint 1: To explicitly perform <strong> Grounding, Captioning, OCR, CoM</strong>, please use the <a href="https://github.com/THUDM/CogCoM#Cookbook">prompts for details</a>.'
+# GROUNDING_NOTICE = 'Hint 1: To use <strong>Explicitly Launching CoM</strong>, please use the <a href="https://github.com/THUDM/CogCoM/blob/main/utils/com_dataset.py#L17">prompts for details</a>.'
 
 
 
@@ -121,7 +121,6 @@ def post(
                 temperature=temperature,
                 top_k=top_k,
                 invalid_slices=text_processor_infer.invalid_slices if hasattr(text_processor_infer, "invalid_slices") else [],
-                args=state['args'],
                 parse_result=True
             )
     except Exception as e:
@@ -131,15 +130,16 @@ def post(
 
     answer = response
     drawn_imgs = []
-    if is_grounding:
+    # if is_grounding:
         # parse_response(pil_img, answer, image_path_grounding)
         # new_answer = answer.replace(input_text, "")
         # result_text.append((input_text, answer))
         # result_text.append((None, (image_path_grounding,)))
-        drawn_imgs = [(im[-1], f'trun-{i}') for i,im in enumerate(ret_imgs) if im[-1] is not None]
+    # drawn_imgs = [(im[-1], f'trun-{i}') for i,im in enumerate(ret_imgs) if im[-1] is not None]
+    drawn_imgs = [ret_imgs[-1]] if ret_imgs[-1] is not None else []
 
-    else:
-        result_text.append((input_text, answer))
+    # else:
+    result_text.append((input_text, answer))
     print(result_text)
     print('finished')
     return "", result_text, hidden_image, drawn_imgs
@@ -155,7 +155,7 @@ def clear_fn2(value):
 def main(args):
     global model, image_processor, cross_image_processor, text_processor_infer, is_grounding
     model, image_processor, cross_image_processor, text_processor_infer = load_model(args)
-    is_grounding = 'grounding' in args.from_pretrained
+    # is_grounding = 'grounding' in args.from_pretrained
     
     gr.close_all()
 
@@ -170,7 +170,7 @@ def main(args):
             with gr.Column(scale=4):
                 with gr.Group():
                     gr.Markdown(COM_NOTICE)
-                    gr.Markdown(GROUNDING_NOTICE)
+                    # gr.Markdown(GROUNDING_NOTICE)
                     input_text = gr.Textbox(label='Input Text', placeholder='Please enter text prompt below and press ENTER.')
                     
                     with gr.Row():
