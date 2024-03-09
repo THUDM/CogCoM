@@ -138,7 +138,8 @@ def main():
                         print("模型："+response)
                     else:
                         print("Model: "+response)
-                # image_path = None
+                image_path = None
+                cache_image = cache_image[1]
                 if not args.english:
                     if rank == 0:
                         query = [input("用户：")]

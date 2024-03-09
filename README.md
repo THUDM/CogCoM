@@ -1,8 +1,8 @@
 # CogCoM
 
 <!-- 📗 [中文版README](./README_zh.md) -->
-🆕 ```2024/2/26```: Release the base model CogCoM-chat-17b.  
-🆕 ```2024/2/26```: Release the base model CogCoM-grounding-17b.  
+🆕 ```2024/2/26```: Release the chat model CogCoM-chat-17b.  
+🆕 ```2024/2/26```: Release the grounding model CogCoM-grounding-17b.  
 🆕 ```2024/2/4```: Release the base model CogCoM-base-17b.
 
 🌟 Jump to detailed introduction: [Introduction to CogCoM](#introduction-to-cogcom).
