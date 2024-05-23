@@ -5,11 +5,11 @@
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for latest update.  </h2>
 
 
-<div align="center">
+<p align="center">
 [![hf_space](https://img.shields.io/badge/🤗-Open%20In%20Spaces-blue.svg)](https://huggingface.co/qijimrc/CogCoM)
 [![arXiv](https://img.shields.io/badge/Arxiv-2401.15947-b31b1b.svg?logo=arXiv)](https://arxiv.org/pdf/2402.04236) 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellow)](https://github.com/THUDM/CogCoM/blob/main/LICENSE) 
-</div>
+<p>
 </h5>
 
 
