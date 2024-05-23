@@ -1,4 +1,8 @@
-## Automatic Data Production Pipe-line for Chain of Manipulations (CoM)
+## Automatic Data Generation Pipeline for Chain of Manipulations (CoM)
+
+<p align="center">
+    <img src=assets/data_framework.png width=100% style="margin-bottom: 0.2;"/>
+<p>
 
 ### 1. Prepare raw data  
 This step prepare the original data source to a unified data format.

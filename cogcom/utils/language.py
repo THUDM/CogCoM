@@ -1,5 +1,3 @@
-from sat.model.official.llama_model import LLaMAModel, rotate_half
-from sat.transformer_defaults import attention_fn_default, split_tensor_along_last_dim
 import torch.nn.functional as F
 from utils.com_utils import manipulate_image
 from transformers import LlamaTokenizer
@@ -9,12 +7,12 @@ import torch
 
 
 
-def apply_rotary_pos_emb_index_bhs_q(q, cos, sin, position_id):
-    # batch_size, num_head, seq_len, hidden_size
-    cos, sin = F.embedding(position_id, cos.squeeze(1)).unsqueeze(1), \
-               F.embedding(position_id, sin.squeeze(1)).unsqueeze(1)
-    q = (q * cos) + (rotate_half(q) * sin)
-    return q
+# def apply_rotary_pos_emb_index_bhs_q(q, cos, sin, position_id):
+#     # batch_size, num_head, seq_len, hidden_size
+#     cos, sin = F.embedding(position_id, cos.squeeze(1)).unsqueeze(1), \
+#                F.embedding(position_id, sin.squeeze(1)).unsqueeze(1)
+#     q = (q * cos) + (rotate_half(q) * sin)
+#     return q
 
 
 def chat_history_to_prompt(self, history, query, eoi_tag="<img>"):

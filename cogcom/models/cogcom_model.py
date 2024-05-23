@@ -121,7 +121,9 @@ class ImageMixin(BaseMixin):
 from .com_memory import CachedAutoregressiveCOMMixin
 class CogCoMModel(LLaMAModel):
     def __init__(self, args, transformer=None, parallel_output=True, **kwargs):
-        super().__init__(args, transformer=transformer, parallel_output=parallel_output, **kwargs)
+    #     super().__init__(args, transformer=transformer, parallel_output=parallel_output, **kwargs)
+        args.parallel_output = parallel_output
+        super().__init__(args, transformer=transformer, **kwargs)
         self.image_length = args.image_length
         self.add_mixin("eva", ImageMixin(args))
         self.del_mixin("mlp")

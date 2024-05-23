@@ -107,13 +107,15 @@ class EVA2CLIPModel(BaseModel):
         args.max_sequence_length = property.pre_len + property.num_patches + property.post_len
         if 'activation_func' not in kwargs:
             kwargs['activation_func'] = gelu
-        super().__init__(args, transformer=transformer, parallel_output=parallel_output, **kwargs)
+        # super().__init__(args, transformer=transformer, parallel_output=parallel_output, **kwargs)
+        super().__init__(args, transformer=transformer, **kwargs)
+        args.parallel_output = parallel_output
         self.transformer.property = property
         self.add_mixin("patch_embedding", ImagePatchEmbeddingMixin(args.in_channels, args.hidden_size, property))
         self.add_mixin("pos_embedding", InterpolatedPositionEmbeddingMixin())
         self.add_mixin("final", IdentityMixin())
         self.add_mixin("newpost", NewLayerForward())
-        self.add_mixin("xattn", XAttn(args.hidden_size // args.num_attention_heads))
+        # self.add_mixin("xattn", XAttn(args.hidden_size // args.num_attention_heads))
 
     @classmethod
     def add_model_specific_args(cls, parser):
