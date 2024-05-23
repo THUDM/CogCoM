@@ -35,7 +35,7 @@ CogCoM enables VLMs to solve various visual problems step-by-step with evidence,
 </p>
 
 
-## Introduction to CogCoM
+## 📖 Introduction to CogCoM
 
 - CogCoM is a general **open-source visual language model** (**VLM**) equipped with Chain of Manipulations (CoM), wich enables VLMs to solve complex visual problems step-by-step with evidence.
 - We formally design 6 basic manipulations upon the pilot experiments, which are capable of handling diverse visual problems.
@@ -272,7 +272,7 @@ for finetuning is located under at ``finetune.sh`` and ``finetune.py`` files.**
 
 
 
-## Examples
+## 🍭 Examples
 
 CogCoM demonstrates the flexible capabilities for adapting to different multimodal scenarios, including evidential visual
 reasoning, Visual Grounding, Grounded Captioning, Image Captioning, Multi Choice, and Detailed Captioning.
@@ -285,7 +285,7 @@ reasoning, Visual Grounding, Grounded Captioning, Image Captioning, Multi Choice
 
 
 
-## Cookbook
+## 💡 Cookbook
 
 ### Task Prompts
 
@@ -322,7 +322,7 @@ downward. (x1, y1) and (x2, y2) are the top-left and bottom-right corners, respe
 coordinates multiplied by 1000 (prefixed with zeros to three digits).
 
 
-### FAQ
+### ❓ FAQ
 
 * If you have trouble in accessing huggingface.co, you can add `--local_tokenizer /path/to/vicuna-7b-v1.5` to load the
   tokenizer.
@@ -331,12 +331,12 @@ coordinates multiplied by 1000 (prefixed with zeros to three digits).
   you want to save the model to `/path/to/my/models`, you can run `export SAT_HOME=/path/to/my/models` before running
   the python command.
 
-## License
+## 🔒 License
 
 The code in this repository is open source under the [Apache-2.0 license](./LICENSE), while the use of the CogCoM model
 weights must comply with the [Model License](./MODEL_LICENSE).
 
-## Citation & Acknowledgements
+## ✒️ Citation & Acknowledgements
 
 ```
 @article{qi2024cogcom,
