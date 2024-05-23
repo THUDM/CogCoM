@@ -27,7 +27,7 @@
 
 ## 😮 Highlights
 
-CogCom enable VLMs to solve various visual problems step-by-step with evidence, without involving external tools.
+CogCoM enables VLMs to solve various visual problems step-by-step with evidence, without involving external tools.
 
 
 <p align="center">
