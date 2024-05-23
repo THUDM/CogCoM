@@ -1,7 +1,7 @@
 ## Automatic Data Generation Pipeline for Chain of Manipulations (CoM)
 
 <p align="center">
-    <img src=assets/data_framework.png width=100% style="margin-bottom: 0.2;"/>
+    <img src="assets/data_framework.png" width=100% style="margin-bottom: 0.2;"/>
 <p>
 
 ### 1. Prepare raw data  

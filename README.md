@@ -5,19 +5,20 @@
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for latest update.  </h2>
 
 
+<div align="center">
 [![hf_space](https://img.shields.io/badge/🤗-Open%20In%20Spaces-blue.svg)](https://huggingface.co/qijimrc/CogCoM)
 [![arXiv](https://img.shields.io/badge/Arxiv-2401.15947-b31b1b.svg?logo=arXiv)](https://arxiv.org/pdf/2402.04236) 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellow)](https://github.com/THUDM/CogCoM/blob/main/LICENSE) 
+</div>
 </h5>
 
 
-<details open><summary>💡 We also have other vision-language projects that may interest you ✨. </summary><p>
+<details><summary>💡 We also have other vision-language projects that may interest you ✨. </summary><p>
 <!--  may -->
 
-> [**CogVLM**](https://github.com/THUDM/CogVLM) <br>
+> [**CogVLM: Visual Expert for Pretrained Language Models**](https://github.com/THUDM/CogVLM) <br>
 [![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/THUDM/CogVLM)  [![github](https://img.shields.io/github/stars/THUDM/CogVLM.svg?style=social&label=Star)](https://github.com/THUDM/CogVLM) <br>
-
-> [**CogAgent**](https://github.com/THUDM/CogVLM) <br>
+> [**CogAgent: A Visual Language Model for GUI Agents**](https://github.com/THUDM/CogVLM) <br>
 [![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/THUDM/CogVLM)  [![github](https://img.shields.io/github/stars/THUDM/CogVLM.svg?style=social&label=Star)](https://github.com/THUDM/CogVLM) <br>
 
 </p></details>
@@ -36,7 +37,7 @@ CogCom enable VLMs to solve various visual problems step-by-step with evidence, 
 
 
 <p align="center">
-<img src="assets/cases.jpg" width=100%>
+<img src="assets/cases.png" width=100%>
 </p>
 
 
