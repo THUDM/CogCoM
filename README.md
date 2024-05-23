@@ -1,10 +1,11 @@
 <h2 align="center"> <a href="https://arxiv.org/pdf/2402.04236">CogCoM: Train Large Vision-Language Models Diving into Details through Chain of Manipulations</a></h2>
-<h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for latest update.  </h2>
+<h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for latest update.
+</h5>
 
-
+<h5 align="center"> 
 [![hf_space](https://img.shields.io/badge/🤗-Open%20In%20Spaces-blue.svg)](https://huggingface.co/qijimrc/CogCoM)
 [![arXiv](https://img.shields.io/badge/Arxiv-2401.15947-b31b1b.svg?logo=arXiv)](https://arxiv.org/pdf/2402.04236) 
-[![License](https://img.shields.io/badge/License-Apache%202.0-yellow)](https://github.com/THUDM/CogCoM/blob/main/LICENSE) 
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellow)](https://github.com/THUDM/CogCoM/blob/main/LICENSE)
 </h5>
 
 
