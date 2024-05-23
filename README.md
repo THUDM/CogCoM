@@ -322,7 +322,7 @@ downward. (x1, y1) and (x2, y2) are the top-left and bottom-right corners, respe
 coordinates multiplied by 1000 (prefixed with zeros to three digits).
 
 
-### ❓ FAQ
+### FAQ
 
 * If you have trouble in accessing huggingface.co, you can add `--local_tokenizer /path/to/vicuna-7b-v1.5` to load the
   tokenizer.
