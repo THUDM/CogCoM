@@ -49,7 +49,7 @@ CogCom enable VLMs to solve various visual problems step-by-step with evidence, 
 We support two GUIs for model inference, **Web demo** and **CLI**. If you want to use it in your python code, it is
 easy to modify the CLI scripts for your case.
 
-### Gradio Web UI  <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a> 
+### Web Demo
 
 Now you can use the local code we have implemented with Gradio for [GUI demo](/cogcom/demo/web_demo.py). Please switch to the directory `demo/` and run:
 ```bash
