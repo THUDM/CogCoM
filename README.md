@@ -19,9 +19,9 @@
 
 
 ## 📣 News
-
-* **[2024/2/26]** 🎉 Release the base model CogCoM-chat-17b.
-* **[2024/2/2]**  🎉 Release the base model CogCoM-grounding-17b.
+* **[2024/6/15]** 🎉 Release our prepared datasets, the synthesized 84K data and manually annotated 7K math data (see [here](https://huggingface.co/datasets/qijimrc/CoMDataset)).
+* **[2024/2/26]** 🎉 Release the chat model CogCoM-chat-17b.
+* **[2024/2/26]**  🎉 Release the grounding model CogCoM-grounding-17b.
 * **[2024/2/4]**  🎉 Release the base model CogCoM-base-17b.
 
 

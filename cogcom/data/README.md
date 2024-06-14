@@ -90,24 +90,24 @@ Each data sample in the dataset is provided in json format and contains the foll
 
 ```json
 {
-    "pid": [int] Problem ID, e.g., 1,
-    "image_path": [string] A file path pointing to the associated image,
-    "question": [string] The question text,
-    "answer": [string] The correct answer for the problem,
-    "com_founds": [list] the tree nodes where the golden answer was found,
+    "pid": "[int] Problem ID, e.g., 1",
+    "image_path": "[string] A file path pointing to the associated image",
+    "question": "[string] The question text",
+    "answer": "[string] The correct answer for the problem",
+    "com_founds": "[list] the tree nodes where the golden answer was found",
     "final_com": {
-        "a,b--c,d": // a: parent's level, b: parent's index, c: current node's level, current node's index,
+        "a,b--c,d": # a: parent's level, b: parent's index, c: current node's level, current node's index,
         {
-            "func": [string] the current manipulation function,
-            "param": [string] the input parameter of current manipulation,
-            "onbox": [list] bounding boxes where current manipulation will operate on,
-            "variables": [dict] mappings from placeholders to real values in `desc`,
-            "desc": [string] the textual description of current reasoning step,
-            "return": [list] the return value of current manipulation,
-            "found": [bool] whether the golden answer is found at current node,
+            "func": "[string] the current manipulation function",
+            "param": "[string] the input parameter of current manipulation",
+            "onbox": "[list] bounding boxes where current manipulation will operate on",
+            "variables": "[dict] mappings from placeholders to real values in `desc`",
+            "desc": "[string] the textual description of current reasoning step",
+            "return": "[list] the return value of current manipulation",
+            "found": "[bool] whether the golden answer is found at current node",
         },
     },
-    "cropped": [bool]  whether the CropZoomIn manipulation is used,
+    "cropped": "[bool]  whether the CropZoomIn manipulation is used",
 }
 ```
 
@@ -119,7 +119,7 @@ You can view the CoM samples with reasoning chains using our visualization scrip
 <summary>Click to expand/collapse the visualization page screeshot.</summary>
 <img src="https://raw.githubusercontent.com/THUDM/CogCoM/master/assets/eg_comtest.png" style="zoom:100%;" />
 <img src="https://raw.githubusercontent.com/THUDM/CogCoM/master/assets/eg_commath326.png" style="zoom:100%;" />
-<img src="https://raw.githubusercontent.com/THUDM/CogCoM/master/assets/eg_commath20.pg" style="zoom:100%;" />
+<img src="https://raw.githubusercontent.com/THUDM/CogCoM/master/assets/eg_commath20.png" style="zoom:100%;" />
 </details>
 
 ### Data Source
