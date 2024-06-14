@@ -96,7 +96,7 @@ Each data sample in the dataset is provided in json format and contains the foll
     "answer": "[string] The correct answer for the problem",
     "com_founds": "[list] the tree nodes where the golden answer was found",
     "final_com": {
-        "a,b--c,d": # a: parent's level, b: parent's index, c: current node's level, current node's index,
+        "a,b--c,d": // a: parent's level, b: parent's index, c: current node's level, current node's index,
         {
             "func": "[string] the current manipulation function",
             "param": "[string] the input parameter of current manipulation",
