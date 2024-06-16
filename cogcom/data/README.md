@@ -73,7 +73,7 @@ We have also open-sourced the data we built to train CogCoM to facilitate potent
 
 ### Data Downloading
 
-  - Download the **Instruction-tuning datasets** prepared with the `WebDataset` format (including serialized image bytes) [here](https://cloud.tsinghua.edu.cn/d/07e5a8d3bdcd4bb18ff3/).
+  - Download the **Instruction-tuning datasets** prepared with the `WebDataset` format (including serialized image bytes) [here](https://pan.baidu.com/s/1WL3-pEX4Ixvf1nl_ilmbWg?pwd=uzmj).
   - Download all **CoM datasets**, including both automatically synthesized data and manually annotated math data from [here](https://huggingface.co/datasets/qijimrc/CoMDataset).
 
 
